@@ -1,9 +1,16 @@
-
 function getCallToActionList(){
+	possibleCallsToAction = [
+		'request a booking',
+		'click to book',
+		'book here',
+		'book now',
+		'book an appointment',
+	];
+	
 	allAs = Array.from(document.querySelectorAll('a'));
 	filterAs = allAs.filter(elem => {
 		string = elem.innerText.toLowerCase();
-		return (string == 'request a booking')
+		return (possibleCallsToAction.some(elem => elem == string));
 	})
 	return filterAs;
 }
